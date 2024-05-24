@@ -544,8 +544,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center logo-wrap">
-                    <div id="fh5co-logo"><a href="https://arnetexperience.github.io/light_theme/"><img
-                                src="logo.png" alt="logo" width="20%" /><span></span></a></div>
+                    <div id="fh5co-logo"><a href="https://arnetexperience.github.io/light_theme/"><img src="logo.png"
+                                alt="logo" width="20%" /><span></span></a></div>
 
 
 
@@ -1048,7 +1048,7 @@
                 <button class="Hotspot transparent-button btn" slot="hotspot-1"
                     data-position="-0.01807796683813881m -0.13234383238683817m 0.15079345864210933m"
                     data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible"
-                    data-bs-toggle="modal" data-bs-target="#packetSendModal">
+                    data-bs-toggle="modal" data-bs-target="#Modal2">
                     <div class="HotspotAnnotation" id="RfileName" style="font-size: smaller;">File</div>
                 </button>
 
@@ -1214,11 +1214,53 @@
                 <button class="Hotspot packet-button btn" slot="hotspot-1"
                     data-position="-0.01807796683813881m -0.13234383238683817m 0.15079345864210933m"
                     data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible"
-                    data-bs-toggle="modal" data-bs-target="#packetSendModal">
+                    data-bs-toggle="modal" data-bs-target="#Modal1">
                     <div class="HotspotAnnotation" id="fileName" style="font-size: smaller;">File</div>
                 </button>
 
             </model-viewer>
+
+            <!-- Modal -->
+            <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: #000000;">PDU & OSI
+                                Details</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="PC1 to Server FTP/1.png" alt="1" id="current-image">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Okay</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: #000000;">PDU & OSI
+                                Details</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="PC2 to Server FTP/1.png" alt="1" id="current-image2">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Okay</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <!-- Modal -->
             <div class="modal fade" id="packetSendModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -1410,11 +1452,11 @@
                         <h4>Links</h4>
                         <ul class="fh5co-footer-links">
                             <li><a href="https://arnetexperience.github.io/light_theme/index.html">Home</a></li>
-							<li><a href="https://arnetexperience.github.io/light_theme/#fh5co-about">About</a></li>
-							<li><a href="https://arnetexperience.github.io/light_theme/learning.html">Start
-									Learning</a></li>
-							<li><a href="https://arnetexperience.github.io/light_theme/contact.html">Contact</a>
-							</li>
+                            <li><a href="https://arnetexperience.github.io/light_theme/#fh5co-about">About</a></li>
+                            <li><a href="https://arnetexperience.github.io/light_theme/learning.html">Start
+                                    Learning</a></li>
+                            <li><a href="https://arnetexperience.github.io/light_theme/contact.html">Contact</a>
+                            </li>
 
                         </ul>
                     </div>
@@ -1462,6 +1504,42 @@
             </div>
         </footer>
         <script>
+
+
+            // JavaScript for changing images
+            document.addEventListener("DOMContentLoaded", function () {
+                let currentIndex = 1; // Index of the current image
+                const totalImages = 79; // Total number of images
+                const imageElement = document.getElementById('current-image');
+
+                function changeImage() {
+                    currentIndex = (currentIndex % totalImages) + 1;
+                    imageElement.src = `PC1 to Server FTP/${currentIndex}.png`; // Update image src
+                    imageElement.alt = `${currentIndex}`; // Update image alt
+                }
+
+                // Change image every 3 seconds
+                setInterval(changeImage, 3000);
+            });
+
+            // JavaScript for changing images
+            document.addEventListener("DOMContentLoaded", function () {
+                let currentIndex = 1; // Index of the current image
+                const totalImages = 100; // Total number of images
+                const imageElement = document.getElementById('current-image2');
+
+                function changeImage() {
+                    currentIndex = (currentIndex % totalImages) + 1;
+                    imageElement.src = `PC2 to Server FTP/${currentIndex}.png`; // Update image src
+                    imageElement.alt = `${currentIndex}`; // Update image alt
+                }
+
+                // Change image every 3 seconds
+                setInterval(changeImage, 3000);
+            });
+
+
+
             function copyText1() {
 
                 var inputElement = document.getElementById('textToCopy1');
